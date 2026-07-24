@@ -1,4 +1,27 @@
+# Virtual environment
 venv/
 .venv/
+
+
+# Python
 *.pyc
 __pycache__/
+
+
+# Environment variables
+.env
+
+# macOS
+.DS_Store
+
+# Data files (keep raw datasets out of git)
+data/*.csv
+data/
+
+# dbt generate files
+logs/
+*.log
+dbt/logs/
+dbt/analytics_project/target/
+dbt/analytics_project/logs/
+dbt/analytics_project/dbt_packages/
