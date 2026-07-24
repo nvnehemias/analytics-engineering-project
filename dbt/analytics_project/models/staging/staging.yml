@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Cleaned customer dimension from the raw olist customer table"
+
+    columns:
+
+      - name: customer_id
+        description: "Primary key for each customer."
+        tests:
+          - unique
+          - not_null 
+
+      - name: customer_unique_id
+        description: "Identifier representing the same customer across multiple orders."
+
+      - name: zip_code_prefix
+        description: "Customer ZIP code prefix."
+
+      - name: city
+        description: "Customer city."
+
+      - name: state
+        description: "Customer state."
