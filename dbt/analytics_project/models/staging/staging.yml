@@ -23,3 +23,37 @@ models:
 
       - name: state
         description: "Customer state."
+      
+  - name: stg_orders
+    description: "Cleaned orders table from the raw olist dataset."
+
+    columns:
+
+      - name: order_id
+        description: "Unique Identifier for each order."
+        tests:
+          - unique 
+          - not_null 
+      
+      - name: customer_id
+        description: "Customer associated with the order."
+        tests:
+          - not_null 
+      
+      - name: order_status
+        description: "Current status of the order."
+
+      - name: order_purchase_timestamp
+        description: "Timestamp when the order was placed."
+      
+      - name: order_approved_at
+        description: "Timestamp when payment was approved."
+
+      - name: order_delivered_carrier_date
+        description: "Timestamp when the carrier received the order."
+
+      - name: order_delivered_customer_date
+        description: "Timestamp when the cusotmer received the order."
+      
+      - name: order_estimated_delivery_date
+        description: "Estimated delivery date."
