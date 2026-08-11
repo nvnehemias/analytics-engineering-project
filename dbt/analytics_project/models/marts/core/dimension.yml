@@ -1,0 +1,35 @@
+version: 2 
+
+models:
+  - name: dim_customers
+    description: "Customer dimension containing customer attributes and purchasing history."
+    
+    columns:
+
+      - name: customer_id 
+        description: "unique Identifier for a customer."
+        tests:
+          - unique 
+          - not_null
+
+      - name: customer_unique_id
+        description: "Identifier representing the customer across orders."
+        tests:
+          - not_null
+
+      - name: city
+        description: "Customer city."
+
+      - name: state
+        description: "Customer state."
+
+      - name: first_order_date
+        description: "Timestamp of the customer's first order."
+
+      - name: last_order_date
+        description: "TImestamp of the customer's most recent order."
+
+      - name: total_orders
+        description: "Total number of orders placed by the customer."
+        tests:
+          - not_null
