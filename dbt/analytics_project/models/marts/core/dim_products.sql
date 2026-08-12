@@ -6,7 +6,7 @@ with products as (
 
 , categories as (
 
-    select * from {{ ref('stg_product_category_translation') }}
+    select * from {{ ref('stg_product_category_name_translation') }}
 
 )
 
