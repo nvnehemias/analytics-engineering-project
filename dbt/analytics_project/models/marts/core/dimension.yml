@@ -33,3 +33,32 @@ models:
         description: "Total number of orders placed by the customer."
         tests:
           - not_null
+
+models:
+
+  - name: dim_sellers
+
+    description: "Seller dimension containing seller attributes and geographic information."
+
+    columns:
+
+      - name: seller_id
+        description: "Unique identifier for the seller."
+        tests:
+          - unique
+          - not_null
+
+      - name: zip_code_prefix
+        description: "ZIP code prefix associated with the seller."
+
+      - name: city
+        description: "Seller city."
+
+      - name: state
+        description: "Seller state."
+
+      - name: latitude
+        description: "Average latitude associated with the seller ZIP code prefix."
+
+      - name: longitude
+        description: "Average longitude associated with the seller ZIP code prefix."
