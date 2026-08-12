@@ -1,4 +1,4 @@
-with seller as (
+with sellers as (
 
     select * from {{ ref('stg_sellers') }}
 
