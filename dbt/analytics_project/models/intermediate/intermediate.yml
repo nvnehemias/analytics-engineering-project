@@ -1,0 +1,21 @@
+version: 2
+
+models:
+
+  - name: int_geolocation_by_zip
+
+    description: "Geolocation data aggregated to one record per ZIP code prefix."
+
+    columns:
+
+      - name: geolocation_zip_code_prefix
+        description: "ZIP code prefix."
+        tests:
+          - unique
+          - not_null
+
+      - name: latitude
+        description: "Average latitude for the ZIP code prefix."
+
+      - name: longitude
+        description: "Average longitude for the ZIP code prefix."
