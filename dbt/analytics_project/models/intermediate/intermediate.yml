@@ -19,3 +19,30 @@ models:
 
       - name: longitude
         description: "Average longitude for the ZIP code prefix."
+
+
+  - name: int_order_reviews
+
+    description: "Order-level review metrics aggregated from individual review records."
+
+    columns:
+
+      - name: order_id
+        description: "Unique identifier for the order."
+        tests:
+          - unique
+          - not_null
+
+      - name: review_count
+        description: "Number of reviews associated with the order."
+        tests:
+          - not_null
+
+      - name: average_review_score
+        description: "Average review score for the order."
+
+      - name: minimum_review_score
+        description: "Lowest review score associated with the order."
+
+      - name: maximum_review_score
+        description: "Highest review score associated with the order."
