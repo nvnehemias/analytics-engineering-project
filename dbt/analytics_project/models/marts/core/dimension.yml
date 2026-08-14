@@ -34,8 +34,6 @@ models:
         tests:
           - not_null
 
-models:
-
   - name: dim_sellers
 
     description: "Seller dimension containing seller attributes and geographic information."

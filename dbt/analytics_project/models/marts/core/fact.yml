@@ -2,7 +2,7 @@ version: 2
 
 models:
 
-  - name: fact_order_items
+  - name: fct_order_items
 
     description: >
       Transaction-level fact table containing one row for each product item
