@@ -1,0 +1,48 @@
+version: 2
+
+models:
+
+  - name: fact_order_items
+
+    description: >
+      Transaction-level fact table containing one row for each product item
+      purchased within an order.
+
+    columns:
+
+      - name: order_id
+        description: "Unique identifier for the order."
+        tests:
+          - not_null
+
+      - name: order_item_id
+        description: "Sequential item number within an order."
+        tests:
+          - not_null
+
+      - name: product_id
+        description: "Identifier for the product purchased."
+        tests:
+          - not_null
+
+      - name: seller_id
+        description: "Identifier for the seller fulfilling the item."
+        tests:
+          - not_null
+
+      - name: customer_id
+        description: "Identifier for the customer who placed the order."
+        tests:
+          - not_null
+
+      - name: order_purchase_timestamp
+        description: "Timestamp when the order was placed."
+
+      - name: shipping_limit_date
+        description: "Seller shipping deadline for the order item."
+
+      - name: price
+        description: "Price of the individual order item."
+
+      - name: freight_value
+        description: "Freight value associated with the order item."
