@@ -11,6 +11,10 @@ select
     , sum(case 
             when payment_type = 'credit_card' then payment_value
             else 0
+        end) as credit_card_value
+    , sum(case 
+            when payment_type = 'boleto' then payment_value
+            else 0
         end) as boleto_value
     , sum(
         case
