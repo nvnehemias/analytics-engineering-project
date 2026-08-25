@@ -1,0 +1,40 @@
+version: 2
+
+models:
+
+  - name: customer_order_summary
+
+    description: >
+      Customer-level summary of order activity, spend, and purchasing behavior.
+      One row represents one customer with at least one order.
+
+    columns:
+
+      - name: customer_id
+        description: "Unique identifier for the customer."
+        tests:
+          - unique
+          - not_null
+
+      - name: order_count
+        description: "Number of unique orders placed by the customer."
+        tests:
+          - not_null
+
+      - name: total_product_revenue
+        description: "Total product price across the customer's orders."
+
+      - name: total_freight
+        description: "Total freight value across the customer's orders."
+
+      - name: total_spend
+        description: "Total recorded payment value across the customer's orders."
+
+      - name: average_order_value
+        description: "Average recorded payment value per order."
+
+      - name: first_order_date
+        description: "Timestamp of the customer's first order."
+
+      - name: last_order_date
+        description: "Timestamp of the customer's most recent order."

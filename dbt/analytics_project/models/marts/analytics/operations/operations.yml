@@ -1,0 +1,49 @@
+version: 2
+
+models:
+
+  - name: delivery_performance
+
+    description: >
+      Order-level operational model measuring actual delivery performance
+      against estimated delivery dates. One row represents one order.
+
+    columns:
+
+      - name: order_id
+        description: "Unique identifier for the order."
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: "Unique identifier for the customer."
+
+      - name: order_status
+        description: "Current status of the order."
+
+      - name: order_purchase_timestamp
+        description: "Timestamp when the order was placed."
+
+      - name: order_delivered_customer_date
+        description: "Timestamp when the order was delivered to the customer."
+
+      - name: order_estimated_delivery_date
+        description: "Estimated delivery date provided for the order."
+
+      - name: delivery_days
+        description: "Number of calendar days between purchase and customer delivery."
+
+      - name: estimated_delivery_days
+        description: "Number of calendar days between purchase and estimated delivery."
+
+      - name: days_late
+        description: >
+          Difference between actual delivery date and estimated delivery date.
+          Negative values indicate early delivery, zero indicates on-time delivery,
+          and positive values indicate late delivery.
+
+      - name: delivered_on_time
+        description: >
+          Boolean indicating whether the order was delivered on or before
+          the estimated delivery date.

@@ -1,0 +1,36 @@
+version: 2
+
+models:
+
+  - name: seller_performance
+
+    description: >
+      Seller-level performance summary based on order item activity.
+      One row represents one seller with at least one order item.
+
+    columns:
+
+      - name: seller_id
+        description: "Unique identifier for the seller."
+        tests:
+          - unique
+          - not_null
+
+      - name: order_count
+        description: "Number of unique orders containing items sold by the seller."
+        tests:
+          - not_null
+
+      - name: item_count
+        description: "Number of individual items sold by the seller."
+        tests:
+          - not_null
+
+      - name: total_product_revenue
+        description: "Total product price across items sold by the seller."
+
+      - name: total_freight
+        description: "Total freight value associated with items sold by the seller."
+
+      - name: average_item_price
+        description: "Average item price for products sold by the seller."
