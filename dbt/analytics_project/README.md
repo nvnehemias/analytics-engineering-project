@@ -1,15 +1,64 @@
-Welcome to your new dbt project!
+# Brazilian E-Commerce Analytics Engineering Project
 
-### Using the starter project
+## Overview
 
-Try running the following commands:
-- dbt run
-- dbt test
+This project is an end-to-end analytics engineering pipeline built using the Brazilian E-Commerce Public Dataset by Olist.
+
+The goal of the project is to transform raw e-commerce data into a reliable, analytics-ready data warehouse that can be used to answer business questions related to sales, customers, sellers, and delivery performance.
+
+The project demonstrates a complete analytics engineering workflow, including data ingestion, data modeling, testing, documentation, and analytical marts.
+
+---
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+## Project Architecture
+
+
+```text
+Olist Open Source Dataset
+          |
+          v
+       Python
+          |
+          v
+      PostgreSQL
+          |
+          v
+         dbt
+          |
+    +-----+-----+
+    |           |
+    v           v
+ Staging   Intermediate
+    |           |
+    +-----+-----+
+          |
+          v
+      Core Marts
+     /          \
+Dimensions      Facts
+     \          /
+      +--------+
+          |
+          v
+   Analytics Marts
+    /     |      \
+ Sales Customers Sellers
+          |
+          v
+      Operations
+          |
+          v
+    BI / Dashboard
+
+```
+
+### Architecture Diagram
+
+![E-Commerce Analytics Engineering Architecture](screenshots/architecture_diagram.png)
+
+### dbt Lineage
+
+The dbt project uses model dependencies to create a layered transformation pipeline from source data through staging, intermediate, core, and analytics models.
+
+![dbt Model Lineage](screenshots/dbt_lineage.png)
