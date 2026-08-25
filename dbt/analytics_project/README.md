@@ -1,4 +1,4 @@
-# Brazilian E-Commerce Analytics Engineering Project
+# E-Commerce Analytics Engineering Project
 
 ## Overview
 
